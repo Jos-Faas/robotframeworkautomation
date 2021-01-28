@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.1 on win32)" generated="20210126 16:52:59.774" rpa="false">
+<suite id="s1" name="Goed" source="C:\Workspace\robot-framework-automation\tests\Goed.robot">
+<test id="s1-t1" name="Goed homepagina">
+<kw name="Begin Web Test" library="CommonWeb" type="setup">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>about:blank</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20210126 16:52:59.933" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20210126 16:52:59.933" endtime="20210126 16:53:01.112"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20210126 16:53:01.112" endtime="20210126 16:53:01.225"></status>
+</kw>
+<status status="PASS" starttime="20210126 16:52:59.933" endtime="20210126 16:53:01.225"></status>
+</kw>
+<kw name="Ga Naar Homepagina" library="GoedApp">
+<arguments>
+<arg>Goed</arg>
+</arguments>
+<kw name="Navigeer En Verifieer Dat Pagina Geladen Is" library="Landing">
+<kw name="Navigeer Naar" library="Landing">
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>${URL_HOME_DICT.${ENVIRONMENT}}</arg>
+</arguments>
+<msg timestamp="20210126 16:53:01.226" level="INFO">Opening url 'https://www.goed.be/nl/'</msg>
+<status status="PASS" starttime="20210126 16:53:01.226" endtime="20210126 16:53:03.101"></status>
+</kw>
+<status status="PASS" starttime="20210126 16:53:01.226" endtime="20210126 16:53:03.101"></status>
+</kw>
+<kw name="Verifieer Dat Pagina Geladen Is" library="Landing">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>${LANDING_NAVIGATION_ELEMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20210126 16:53:03.102" endtime="20210126 16:53:03.124"></status>
+</kw>
+<status status="PASS" starttime="20210126 16:53:03.101" endtime="20210126 16:53:03.124"></status>
+</kw>
+<status status="PASS" starttime="20210126 16:53:01.226" endtime="20210126 16:53:03.124"></status>
+</kw>
+<kw name="Controleer Dat We Op De Homepagina Goed Zijn" library="Landing">
+<arguments>
+<arg>${naam_site}</arg>
+</arguments>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LANDING_NAVIGATION_ELEMENT}</arg>
+</arguments>
+<assign>
+<var>${logoGoed}</var>
+</assign>
+<msg timestamp="20210126 16:53:03.137" level="INFO">${logoGoed} = Goed</msg>
+<status status="PASS" starttime="20210126 16:53:03.125" endtime="20210126 16:53:03.137"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${logoGoed}</arg>
+</arguments>
+<msg timestamp="20210126 16:53:03.137" level="INFO">Goed</msg>
+<status status="PASS" starttime="20210126 16:53:03.137" endtime="20210126 16:53:03.137"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${naam_site}</arg>
+</arguments>
+<msg timestamp="20210126 16:53:03.137" level="INFO">Goed</msg>
+<status status="PASS" starttime="20210126 16:53:03.137" endtime="20210126 16:53:03.137"></status>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<arguments>
+<arg>${LANDING_NAVIGATION_ELEMENT}</arg>
+<arg>${naam_site}</arg>
+</arguments>
+<msg timestamp="20210126 16:53:03.137" level="INFO">Verifying element 'css=h1[class='logo']' contains exact text 'Goed'.</msg>
+<status status="PASS" starttime="20210126 16:53:03.137" endtime="20210126 16:53:03.147"></status>
+</kw>
+<status status="PASS" starttime="20210126 16:53:03.124" endtime="20210126 16:53:03.147"></status>
+</kw>
+<status status="PASS" starttime="20210126 16:53:01.225" endtime="20210126 16:53:03.147"></status>
+</kw>
+<kw name="End Web Test" library="CommonWeb" type="teardown">
+<kw name="Close All Browsers" library="SeleniumLibrary">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" starttime="20210126 16:53:03.148" endtime="20210126 16:53:06.011"></status>
+</kw>
+<status status="PASS" starttime="20210126 16:53:03.147" endtime="20210126 16:53:06.012"></status>
+</kw>
+<doc>Dit is de test of de homepagina van de website van Goed werkt en het logo aanwezig is</doc>
+<tags>
+<tag>smoke</tag>
+</tags>
+<status status="PASS" starttime="20210126 16:52:59.932" endtime="20210126 16:53:06.013" critical="yes"></status>
+</test>
+<doc>Dit is de robot file voor de testcases van de Goed website</doc>
+<status status="PASS" starttime="20210126 16:52:59.775" endtime="20210126 16:53:06.017"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">smoke</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Goed">Goed</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
