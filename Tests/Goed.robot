@@ -6,7 +6,7 @@ Test Setup  Begin Web Test
 Test Teardown  End Web Test
 
 # robot -d results tests/Goed.robot
-# robot -d results -t "Werkinstructies homepagina" tests/Goed.robot    om testcases apart uit te voeren
+# robot -d results -t "Goed homepagina" tests/Goed.robot    om testcases apart uit te voeren
 # robot -d results -i "smoke" tests/Goed.robot    om Tags uit te voeren
 
 *** Variables ***
